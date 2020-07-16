@@ -7,5 +7,3 @@ Please send me any comment.
 
 Best regards,
 Arístides
-
-On version 0.3 I will include basic code generation for main (menu) html and simple forms
