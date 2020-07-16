@@ -1,0 +1,168 @@
+body {
+    font-family: 'DM Sans';
+    font-size: 16px;
+}
+
+.btnZ a {
+    width: 140px;
+    height: 60px;
+    padding-top: 10px;
+    margin-bottom: 5px;
+    color: black;
+}
+
+.btnZ {
+    width: 140px;
+}
+
+.art {
+    display: flex;
+}
+
+.row {
+    border: 1px dotted grey;
+    padding-left: 10px;
+}
+
+section {
+    width: 100%;
+    margin-right: 30px;
+}
+
+#secProp {
+    width: 800px;
+    /*background-color: #ffccbc;*/
+}
+
+
+#form {
+    background-color: #fafafa;
+}
+
+.grid-stack-item {
+    border: 1px dotted #dcecee;
+}
+
+.grid-stack-item:hover {
+    border: 1px dotted grey;
+}
+
+#widType {
+    width: 150px !important;
+}
+
+body {
+    margin: 10px;
+}
+
+[id^=wg]:hover {
+    cursor: move;
+}
+
+.btnEdit {
+    top: 0px;
+    position: relative;
+    cursor: pointer;
+    border: none;
+    color: white;
+}
+
+#trash {
+    background-color: #b71c1c;
+}
+
+#copy {
+    background-color: #1b5e20;
+}
+
+.fldActive {
+    border: 1px solid orange;
+}
+
+.req {
+    color: red;
+}
+
+.nuevo {
+    background-color: blue;
+}
+
+#frmDescription {
+    font-size: 12px;
+    display: block;
+    margin-top: -10px;
+    margin-bottom: 8px;
+}
+
+#frmTitle {
+    margin-top: -15px;
+}
+
+#newDropdown {
+    width: 130px !important;
+}
+
+#btnNewForm {
+    cursor: pointer;
+}
+
+#btnFrm {
+    position: absolute;
+    top: 78px;
+    right: 10px;
+    background-color: #ffc400;
+    height: 35px;
+    padding: 10px;
+    border-radius: 5px 0 0 5px;
+    cursor: pointer;
+    color: #424242;
+}
+
+#forms {
+    position: absolute;
+    width: 300px;
+    top: 105px;
+    right: 10px;
+    z-index: 100;
+    background-color: white;
+    border-radius: 5px;
+    display: none;
+}
+
+#forms>p {
+    display: block;
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+    border-bottom: 1px solid blanchedalmond;
+    margin: 0;
+    padding: 10px;
+}
+
+#forms span {
+    font-size: 12px;
+    font-style: italic;
+}
+
+#forms a {
+    display: block;
+    text-align: right;
+    margin-right: 10px;
+}
+
+#forms div {
+    font-size: 18px;
+}
+
+.collection-item {
+    cursor: pointer;
+}
+
+.collection-item:hover {
+    background-color: #afccf7;
+    border-radius: 20px;
+}
+
+.codeWin {
+    height: 350px;
+}

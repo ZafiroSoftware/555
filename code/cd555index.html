@@ -1,0 +1,182 @@
+<!--
+    waves en opciones de menú
+    en una forma:
+        crear nuevos campos
+        hide/show campos
+-->
+<!DOCTYPE html>
+<html lang="es-mx">
+
+<head>
+
+    <link rel="icon" sizes="192x192" href="img/icono.png">
+
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/20.1.3/css/dx.common.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/20.1.3/css/dx.softblue.compact.css" /> -->
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/20.1.3/css/dx.material.blue.light.compact.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/20.1.3/css/dx.light.css" /> -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/waves.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/Mercury55.css" />
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.3.0/jszip.min.js"></script>
+    <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/20.1.3/js/dx.web.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/20.1.3/js/localization/dx.messages.es.js"></script>
+    <script type="text/javascript" src="js/waves.min.js"></script>
+    <script type="text/javascript" src="js/Mercury55.js"></script>
+
+</head>
+
+<body onresize="resizeWindow()">
+
+    <div id="sis" class="hide">
+        <header id="encabezado">
+            <div id="titulo" class="Row waves" title="Mostrar/ocultar menú">
+                <i id="hamb" class="Row fa fa-navicon"></i>
+                <span class="Row">&nbsp&nbspMercury 55</span>
+            </div>
+            <div id="toolEmpresa" class="right-border Row" title="Empresa actual" onclick="loadHTML('Test.html')">Empresa Mexicana, S.A. de C.V.</div>
+            <div id="avatar" class="avatar waves"><img src="img/images.jfif" title="Usuario" /></div>
+            <i id="apps" class="dx-icon-smalliconslayout flat-icon" title="Módulos"></i>
+            <i id="bellNotice" class="fa fa-bell flat-icon badge" title="Alertas, mensajes y tareas"></i>
+            <i id="moreOptions" class="fa fa-ellipsis-v flat-icon responsive" title="Más opciones"></i>
+        </header>
+
+        <nav id="sideMenu">
+            <main id="contenido" class="dx-theme-background-color">
+            </main>
+        </nav>
+
+        <div id="loadMenu"></div>
+    </div>
+
+    <div id="pantallasExtras" class="hide">
+
+        <div id="elMenu">
+            <div>
+                <i id="iconSearch" class="fa fa-search"></i>
+                <input type="text" id="search" onkeyup="searchMenu()" class="input-field" placeholder="Buscar una opción" title="Escriba la opción a buscar" />
+            </div>
+        </div>
+
+        <div id="popWin">
+            <div id="alertasPop">
+                <div class="panelBackground">
+                    <h2>15 nuevos</h2>
+                    <p>Notificaciones al Usuario</p>
+                </div>
+                <div id="alertasTab">
+                </div>
+                <br />
+                <div class="footerBackground">
+                    Ver todo
+                </div>
+            </div>
+        </div>
+
+        <div id="popMod">
+            <div id="modulosPop">
+                <div class="panelBackground">
+                    <h2>Módulos Zafirosoft ERP</h2>
+                    <p>Atajos a aplicaciones frecuentes</p>
+                </div>
+                <div id="CargaApps">Cargando datos...</div>
+                <table class="appsTbl"></table>
+                <div class="footerBackground">
+                    Ver todo
+                </div>
+            </div>
+        </div>
+
+        <div id="popUsr">
+            <div id="usuarioPop">
+                <div class="panelBackground">
+                    <div class="imgUsr">
+                        <img src="img/images.jfif" title="Foto de usuario" />
+                    </div>
+                    <h3 id="usrNameHead">Juanita María Rodríguez P.</h2>
+                        <p id="usrCorreoHead">jmrodriguezperez@zafiroerp.com.mx</p>
+                </div>
+                <div class="mnuDrop">
+                    <div class="waveMenu"><i class="fa fa-cog"></i>
+                        Configuración</div>
+                    <hr />
+                    <!-- <div class="waveMenu" id="f11Option"><i class="fa fa-desktop"></i><span id="panComp"> Pantalla Completa<kbd>F11</kbd></span></div>
+                <div class="waveMenu"><i class="fa fa-print"></i><span> Imprimir<kbd>Ctrl+P</kbd></div>
+                <hr /> -->
+                    <div class="waveMenu"><i class="fa fa-sign-out"></i><span>
+                            Salir</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="popMore">
+            <div id="mnuMore">
+                <div class="panelBackground">
+                    <h2>Menú extendido</h2>
+                </div>
+                <div class="mnuDrop">
+                    <div id="mnuAlertas" class="waveMenu"><i class="fa fa-bell"></i>
+                        Alertas, mensajes y tareas</div>
+                    <div id="mnuModulos" class="waveMenu"><i class="fa fa-th"></i><span>
+                            Módulos</span></div>
+                    <hr />
+                    <div id="mnuConfiguracion" class="waveMenu"><i class="fa
+                            fa-cog"></i><span> Configuración</span></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Pantalla de Login -->
+    <div id="box">
+        <img id="logoLogin" src="img/Logo ERP.jpg" />
+        <br />
+        <br />
+        <h1 class="center-align">
+            <b>Bienvenido</b>
+        </h1>
+        <div>
+            <div class="dx-fieldset">
+                <div class="dx-field">
+                    <div class="dx-field-value">
+                        <div id="usuarioID"></div>
+                    </div>
+                </div>
+                <br />
+                <div class="dx-field">
+                    <div class="dx-field-value">
+                        <div id="password"></div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <br />
+            <input id="iniciar" type="button" onclick='javascript:Inicia()' value="Acceder" title="Acceder a Zafirosoft ERP" />
+            <br />
+            <p id="validando" class="center-align hide"></p>
+        </div>
+    </div>
+
+    <!-- Selector de cliente -->
+    <div id="selCliente">
+        <div id="boxEmp">
+            <input type="text" id="empresa" />
+            <br />
+            <br />
+            <button onclick="javascript:grabaCliente()">Aceptar</button>
+        </div>
+    </div>
+
+</body>
+
+</html>

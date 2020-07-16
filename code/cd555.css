@@ -1,0 +1,526 @@
+/* CSS generales */
+
+@font-face {
+    font-family: ZafiroFont;
+    src: url(sansation_regular.ttf);
+}
+
+html {
+    font-family: ZafiroFont;
+    color: #333333;
+}
+
+body {
+    /* min-width: 320px; */
+    margin: auto;
+    background-color: #03338B;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+
+/* CSS del encabezado */
+
+#encabezado {
+    border-bottom-style: inset;
+    border-bottom-color: #c7ccd1;
+    border-bottom-width: 1px;
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background-color: #fffffe;
+    font-size: 20px;
+    height: 64px;
+}
+
+#titulo {
+    background-color: #5dadf2;
+    color: white;
+    width: 220px;
+    padding: 15px 10px 0px 10px;
+    height: 64px;
+    font-size: 24px;
+}
+
+.right-border {
+    border-right-style: inset;
+    border-right-color: #c7ccd1;
+    border-right-width: 1px;
+    padding-right: 5px;
+}
+
+#bellNotice {
+    float: right;
+    cursor: pointer;
+    font-size: 24px;
+    text-align: center;
+    color: #121C25;
+}
+
+#alertasTab {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.badge:after {
+    content: "15";
+    position: absolute;
+    background: #ca1f1f;
+    height: 20px;
+    top: 5px;
+    right: 10px;
+    width: 20px;
+    text-align: center;
+    line-height: 22px;
+    font-size: 11px;
+    border-radius: 50%;
+    color: white;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .3);
+    animation: pulse-dot 1.9s cubic-bezier(0.455, 0.03, 0.515, 0.955) -.4s infinite;
+}
+
+@keyframes pulse-dot {
+    0% {
+        transform: scale(.8);
+    }
+    50% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(.8);
+    }
+}
+
+#apps {
+    margin-top: 0px;
+    float: right;
+    cursor: pointer;
+    font-size: 24px;
+    text-align: center;
+    color: #121C25;
+}
+
+.avatar {
+    margin-top: 15px;
+    margin-right: 10px;
+    margin-left: 5px;
+    float: right;
+    cursor: pointer;
+    border-radius: 50% 50%;
+    width: 35px;
+    height: 35px;
+}
+
+.avatar img {
+    width: 35px;
+    height: 35px;
+}
+
+#moreOptions {
+    margin-top: 8px;
+    margin-right: 3px;
+}
+
+.responsive {
+    visibility: hidden;
+    float: right;
+    cursor: pointer;
+}
+
+#toolEmpresa {
+    top: 23px;
+    left: 245px;
+    position: fixed;
+    color: #121C25;
+}
+
+@media screen and (max-width: 700px) {
+    #toolEmpresa,
+    #apps,
+    #bellNotice,
+    .avatar {
+        display: none !important;
+    }
+    .responsive {
+        visibility: visible;
+    }
+}
+
+.footerBackground {
+    background-color: #f7f9fa;
+    padding: 10px;
+    color: #808080;
+    margin: 0px -25px -25px -25px;
+    text-align: right;
+    font-style: italic;
+    cursor: pointer;
+}
+
+#alertasTab {
+    margin: 0 -25px 0 -25px;
+}
+
+/* CSS del contenido central */
+#contenido {
+    margin-top: 65px;
+    /* Add a bottom margin to avoid content overlay */
+}
+
+/* CSS para la parte izquierda (Menú flotante) */
+#elMenu {
+    width: 240px;
+    background-color: #121C25;
+    color: white;
+    cursor: pointer;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow: auto;
+    margin-top: 64px;
+    font-family: ZafiroFont;
+    font-size: 16px;
+    position: fixed;
+}
+
+#search {
+    width: 100%;
+    font-size: 12px;
+    padding: 5px 5px 5px 5px;
+    border: 1px solid #ddd;
+    border-radius: 18px;
+    font-family: ZafiroFont;
+}
+
+#iconSearch {
+    position: relative;
+    ;
+    float: right;
+    color: grey;
+    margin-right: 10px;
+    top: 20px;
+}
+
+.panelBackground {
+    background-color: #5dadf2;
+    padding: 1px;
+    color: white;
+    margin: -25px -25px 0px -25px;
+    text-align: center;
+}
+
+.textAlign-right {
+    float: right;
+}
+
+.dx-multiview-item-content {
+    padding: 5px 10px 100px 10px;
+}
+
+.dx-tabs-wrapper {
+    padding-left: 7px;
+}
+
+.elIcono {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.elFlecha {
+    float: right;
+    padding-right: 5px;
+    font-size: 15px;
+}
+
+.grpOpcion {
+    border-bottom-style: solid;
+    border-bottom-color: #3e464d;
+    border-bottom-width: 1px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.Row {
+    display: inline-block !important;
+}
+
+.hide {
+    display: none!important;
+}
+
+.subMenu {
+    padding-left: 27px;
+}
+
+.opcion {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 10px;
+}
+
+.mainRowOption {
+    padding: 10px 10px 10px 0px;
+    border-radius: 10px;
+}
+
+.opcion:hover,
+.mainRowOption:hover {
+    color: #6da0cb;
+    background-color: rgb(4, 6, 8);
+}
+
+.selOp {
+    color: #6da0cb;
+}
+
+.zapps {
+    padding-top: 20px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+.zapps:hover {
+    background-color: #ecf0f3;
+}
+
+.zapps i {
+    color: #03A9F4;
+    /* #121C25; */
+}
+
+.zapps div small {
+    color: #6D6D6D;
+}
+
+.center-align {
+    text-align: center;
+}
+
+.imgUsr {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+.imgUsr img {
+    width: 100%;
+    height: auto;
+}
+
+#usrNameHead {
+    position: absolute;
+    top: 10px;
+    text-align: left;
+    width: 100%;
+    left: 75px;
+}
+
+#usrCorreoHead {
+    position: absolute;
+    top: 35px;
+    text-align: left;
+    width: 100%;
+    left: 75px;
+    font-size: 12px;
+}
+
+.mnuDrop {
+    margin-top: 20px;
+}
+
+.mnuDrop hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    cursor: default;
+    border-top: 1px solid #f0f0f0;
+}
+
+.mnuDrop div:hover {
+    color: #6da0cb;
+    background-color: #ecf0f3;
+}
+
+.mnuDrop div {
+    cursor: pointer;
+    font-size: 15px;
+    color: #6D6D6D;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.mnuDrop kbd {
+    text-align: right;
+    display: flexbox;
+    float: right;
+    padding: 3px;
+    border-radius: 7px;
+    font-size: 11px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(213, 213, 214);
+}
+
+.appsTbl {
+    margin-left: -13px;
+    margin-top: 5px;
+}
+
+#box {
+    border-radius: 20px;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.5), 0 15px 12px rgba(0,0,0,0.5);
+    max-width: 500px;
+    width: 280px;
+    margin: auto;
+    background: white;
+    padding: 10px;
+    margin-top: 40px;
+    min-height: 500px;
+    height: 500px;
+}
+
+#logoLogin {
+    box-shadow: 0 3px 10px rgba(0,0,0,0.5), 0 10px 7px rgba(0,0,0,0.5);
+    border-radius: 18px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 230px;
+    position: relative;
+    margin-top: -13%;
+    z-index: 1;
+}
+
+#iniciar {
+    background-color: #03338B;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.3), 0 10px 7px rgba(0,0,0,0.3);
+    border: none;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 18px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 230px;
+    position: relative;
+}
+
+#empresa {
+    width: 220px;
+}
+
+#validandoEmp {
+    color: red;
+}
+
+#boxEmp button {
+    width:160px; 
+    margin-left: 30px;
+    height: 35px;
+    background-color: #03338B;
+    color: white;
+    border: 0;
+    text-align:center;
+}
+
+/* label focus color */
+.input-field input[type=password]:focus+label,
+.input-field input[type=text]:focus+label {
+    color: #03338B !important;
+}
+
+/* label underline focus color */
+.input-field input[type=password]:focus,
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid #03338B !important;
+    box-shadow: 0 1px 0 0 #03338B !important;
+}
+
+/* icon prefix focus color */
+.input-field .prefix.active {
+    color: #03338B !important;
+}
+
+/* para las pantallas de grid-forma*/
+
+.frmTitulo {
+    font-size: 28px;
+    font-family: ZafiroFont;
+    color: #333333;
+    height: 100px;
+    background-color: #f2f2f2;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+}
+
+.subContenido {
+    display: flex;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#frmEdit {
+    width: 50%;
+    padding: 15px;
+}
+
+.gridZone {
+    width: 50%;
+}
+
+#btnSave {
+    margin-top: 20px;
+    background-color: #62ACEF;
+    color: white;
+    font-family: ZafiroFont;
+}
+
+#btnSave .dx-icon {
+    color: white;
+}
+
+.btnFotoUsr img {
+    width: 170px;
+    height: 170px;
+    margin-left: -15px!important;
+    margin-top: -7px; 
+    border: none;
+}
+
+.btnInsert > div,
+.btnInsert > div > div {
+    background-color: #62ACEF;
+    color: white!important;
+    font-family: ZafiroFont!important;
+}
+
+.btnInsert > div > div > div > i {
+    color: white!important;
+}
+
+.divider {
+    width: 6px;
+    background-color: #dddddd;
+    padding-top: 15%;
+}
+
+.divider:hover {
+    cursor: col-resize;
+    background-color: #4b4b4b;
+}
+
+.divider span {
+    margin-left:-4px;
+    color: #888888;
+}

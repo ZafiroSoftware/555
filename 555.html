@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>555</title>
+    <link href='https://fonts.googleapis.com/css?family=DM Sans' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gridstack@1.1.1/dist/gridstack.min.css" />
+
+    <link rel="stylesheet" href="css/555.css" />
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/gridstack@1.1.1/dist/gridstack.all.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper blue darken-4">
+            <span>&nbsp;</span><a href="#!" id="projectTitle" class="brand-logo"><i class="fa fa-fighter-jet"></i>555</a>
+            <ul class="right">
+                <li><a id="btnSave" title="Save project"><i class="fa fa-save"></i></a></li>
+                <li><a id="btnLoad" title="Load project"><i class="fa fa-upload"></i></a></li>
+                <!-- <li><a title="New form or project" class="dropdown-trigger" data-target="newDropdown">New<i class="fa fa-sort-desc right"></i></a></li> -->
+                <li><a id="btnGen" title="Generate code" class="modal-trigger" href="#modGen"><i class="fa fa-code"></i></a></li>
+            </ul>
+        </div>
+    </nav>
+    <br />
+    <i id="btnFrm" title="List forms" class="fa fa-drivers-license-o"></i>
+    <ul id="forms" class="collection z-depth-3">
+        <p>List of Forms</p>
+        <a id="btnNewForm"><i class="fa fa-plus"></i> Add new form</a>
+    </ul>
+    <article class="art">
+        <section class="btnZ">
+            <a class="waves-effect waves white btn" id="btnText"><i class="fa fa-i-cursor left"></i>Text</a>
+            <a class="waves-effect waves white btn" id="btnMemo"><i class="fa fa-paragraph left"></i>Memo</a>
+            <a class="waves-effect waves white btn" id="btnNumber"><i class="fa fa-calculator left"></i>Number</a>
+            <a class="waves-effect waves white btn" id="btnDate"><i class="fa fa-calendar-o left"></i>Date/Time</a>
+            <a class="waves-effect waves white btn" id="btnCheck"><i class="fa fa-check-square-o left"></i>Check</a>
+            <a class="waves-effect waves white btn" id="btnCombo"><i class="fa fa-caret-square-o-down left"></i>Combo</a>
+            <a class="waves-effect waves white btn" id="btnImage"><i class="fa fa-image left"></i>Image</a>
+            <a class="waves-effect waves white btn" id="btnLookup"><i class="fa fa-database left"></i>Lookup</a>
+            <a class="waves-effect waves white btn" id="btnGrid"><i class="fa fa-table left"></i>Grid</a>
+        </section>
+        <section>
+            <h5 id="frmTitle"></h5>
+            <h7 id="frmDescription"></h7>
+            <div id="form" class="grid-stack">
+            </div>
+        </section>
+        <section id="secProp">
+            <div class="center-align"><b>Properties</b></div>
+            <div class="row">
+                <div class="col s12">
+                    <ul id="tabs" class="tabs blue darken-4">
+                        <li class="tab col s4 disabled"><a class="white-text" href="#fieldTab">Field</a></li>
+                        <li class="tab col s4"><a class="active white-text" href="#formTab">Form</a></li>
+                        <li class="tab col s4"><a class="white-text" href="#projectTab">Project</a></li>
+                    </ul>
+                </div>
+                <ul class="collapsible" id="fieldTab">
+                    <li class="active">
+                        <div class="collapsible-header"><i class="fa fa-cog"></i>General</div>
+                        <div class="collapsible-body">
+                            <div class="input-field">
+                                <input id="field" type="text">
+                                <label for="field">Field</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="caption" type="text">
+                                <label for="caption">Caption</label>
+                            </div>
+                            <div class="row">
+                                <div class="input-field inline">
+                                    <a id="btnOptional" class="waves-effect waves-light btn-small"><i class="fa fa-square-o"></i> Optional</a>
+                                </div>
+                                <div class="input-field inline">
+                                    <input id="reqMsg" type="text">
+                                    <label for="reqMsg">Required message</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <a id="btnEnabled" class="waves-effect waves-light btn-small"><i class="fa fa-check-circle-o"></i> Enabled</a>
+                                <a id="btnVisible" class="waves-effect waves-light btn-small"><i class="fa fa-eye"></i> Visible</a>
+
+                                <a id="btnwidType" class="dropdown-trigger btn-small" data-target="widType"><i class="fa fa-i-cursor"></i> Text</a>
+                                <ul id="widType" class="dropdown-content">
+                                    <li><a href="#!"><i class="fa fa-i-cursor"></i>Text</a></li>
+                                    <li><a href="#!"><i class="fa fa-phone"></i>Phone</a></li>
+                                    <li><a href="#!"><i class="fa fa-envelope"></i>Email</a></li>
+                                    <li><a href="#!"><i class="fa fa-key"></i>Password</a></li>
+                                    <li><a href="#!"><i class="fa fa-link"></i>URL</a></li>
+                                    <li><a href="#!"><i class="fa fa-caret-square-o-down"></i>Combo</a></li>
+                                    <li><a href="#!"><i class="fa fa-dot-circle-o"></i>Options</a></li>
+                                    <li><a href="#!"><i class="fa fa-square"></i>Buttons</a></li>
+                                    <li><a href="#!"><i class="fa fa-calculator"></i>Number</a></li>
+                                    <li><a href="#!"><i class="fa fa-money"></i>Money</a></li>
+                                    <li><a href="#!"><i class="fa fa-calendar-o"></i>Date</a></li>
+                                    <li><a href="#!"><i class="fa fa-clock-o"></i>Time</a></li>
+                                    <li><a href="#!"><i class="fa fa-calendar"></i>Date Time</a></li>
+                                    <li><a href="#!"><i class="fa fa-check-square-o"></i>Check</a></li>
+                                    <li><a href="#!"><i class="fa fa-toggle-on"></i>Switch</a></li>
+                                    <li><a href="#!"><i class="fa fa-square"></i>Push button</a></li>
+                                </ul>
+                            </div>
+                            <div class="input-field">
+                                <input id="tooltip" type="text">
+                                <label for="tooltip">Tooltip</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="placeholder" type="text">
+                                <label for="placeholder">Placeholder</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="help" type="text">
+                                <label for="help">Help</label>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="fa fa-tag"></i>Values</div>
+                        <div class="collapsible-body">
+
+                            <div class="input-field">
+                                <input id="decimal" type="number" min="0" max="9">
+                                <label for="decimal">Decimal places</label>
+                            </div>
+                            <div class="input-field">
+                                <textarea id="listValues" class="materialize-textarea"></textarea>
+                                <label for="listValues">List values</label>
+                            </div>
+                            <div id="defVal" class="input-field">
+                                <input id="defaultValue" type="text">
+                                <label for="defaultValue">Default value</label>
+                            </div>
+
+                            <div id="validation">
+                                <div class="section">
+                                    <div><b>Validation</b></div>
+                                </div>
+                                <div class="input-field">
+                                    <input id="minValue" type="text">
+                                    <label for="minValue">Min value</label>
+                                </div>
+                                <div class="input-field">
+                                    <input id="minMsg" type="text">
+                                    <label for="minMsg">Min message</label>
+                                </div>
+                                <div class="input-field">
+                                    <input id="maxValue" type="text">
+                                    <label for="maxValue">Max value</label>
+                                </div>
+                                <div class="input-field">
+                                    <input id="maxMsg" type="text">
+                                    <label for="maxMsg">Max message</label>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="fa fa-cogs"></i>Advanced</div>
+                        <div class="collapsible-body">
+                            <a id="btnDup" class="waves-effect waves-light btn-small"><i class="fa fa-bars"></i> Duplicated values</a>
+                            <br /><br />
+                            <div class="input-field inline">
+                                <input id="Mask" type="text">
+                                <label for="Mask">Input mask</label>
+                            </div>
+                            <div class="input-field">
+                                <textarea id="fldNotes" class="materialize-textarea"></textarea>
+                                <label for="fldNotes">Field Notes</label>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="fa fa-flash"></i>Events</div>
+                        <div class="collapsible-body">
+                            <ul class="collapsible">
+                                <li>
+                                    <div class="collapsible-header"><i class="fa fa-circle"></i>onFocus</div>
+                                    <div class="collapsible-body">
+                                        <div class="input-field">
+                                            <textarea id="fldonFocus" class="materialize-textarea"></textarea>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="collapsible-header"><i class="fa fa-circle-o"></i>onBlur</div>
+                                    <div class="collapsible-body">
+                                        <div class="input-field">
+                                            <textarea id="fldonBlur" class="materialize-textarea"></textarea>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="collapsible-header"><i class="fa fa-exchange"></i>onChange</div>
+                                    <div class="collapsible-body">
+                                        <div class="input-field">
+                                            <textarea id="fldonChange" class="materialize-textarea"></textarea>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="collapsible" id="formTab">
+                    <li class="active">
+                        <div class="collapsible-header"><i class="fa fa-cog"></i>General</div>
+                        <div class="collapsible-body">
+                            <div class="input-field">
+                                <input id="frmName" type="text">
+                                <label for="frmName">Name</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="frmCaption" type="text" value="New 555 form">
+                                <label for="frmCaption">Caption</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="frmDesc" type="text">
+                                <label for="frmDesc">Description</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="frmTooltip" type="text">
+                                <label for="frmTooltip">Tooltip</label>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="fa fa-cogs"></i>Advanced</div>
+                        <div class="collapsible-body">
+                            <div class="input-field">
+                                <textarea id="frmLocal" class="materialize-textarea"></textarea>
+                                <label for="frmLocal">Local Variables</label>
+                            </div>
+                            <div class="input-field">
+                                <textarea id="frmNotes" class="materialize-textarea"></textarea>
+                                <label for="frmNotes">Form Notes</label>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="fa fa-flash"></i>Events</div>
+                        <div class="collapsible-body">
+                            <ul class="collapsible">
+                                <li>
+                                    <div class="collapsible-header"><i class="fa fa-sun-o"></i>onCreate</div>
+                                    <div class="collapsible-body">
+
+                                        <ul class="collapsible">
+                                            <li>
+                                                <div class="collapsible-header green-text"><i class="fa fa-sun-o"></i>onCreateStart</div>
+                                                <div class="collapsible-body">
+                                                    <div class="input-field">
+                                                        <textarea id="frmCreateStart" class="materialize-textarea"></textarea>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="collapsible-header red-text"><i class="fa fa-sun-o"></i>onCreateEnd</div>
+                                                <div class="collapsible-body">
+                                                    <div class="input-field">
+                                                        <textarea id="frmCreateEnd" class="materialize-textarea"></textarea>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="collapsible-header"><i class="fa fa-check"></i>onValidate</div>
+                                    <div class="collapsible-body">
+                                        <ul class="collapsible">
+
+                                            <li>
+                                                <div class="collapsible-header green-text"><i class="fa fa-check"></i>onValidateStart</div>
+                                                <div class="collapsible-body">
+                                                    <div class="input-field">
+                                                        <textarea id="frmValidateStart" class="materialize-textarea"></textarea>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="collapsible-header red-text"><i class="fa fa-check"></i>onValidateEnd</div>
+                                                <div class="collapsible-body">
+                                                    <div class="input-field">
+                                                        <textarea id="frmValidateEnd" class="materialize-textarea"></textarea>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="collapsible-header"><i class="fa fa-save"></i>onSave</div>
+                                    <div class="collapsible-body">
+                                        <ul class="collapsible">
+                                            <li>
+                                                <div class="collapsible-header green-text"><i class="fa fa-save"></i>onSaveStart</div>
+                                                <div class="collapsible-body">
+                                                    <div class="input-field">
+                                                        <textarea id="frmSaveStart" class="materialize-textarea"></textarea>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="collapsible-header red-text"><i class="fa fa-save"></i>onSaveEnd</div>
+                                                <div class="collapsible-body">
+                                                    <div class="input-field">
+                                                        <textarea id="frmSaveEnd" class="materialize-textarea"></textarea>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="collapsible-header"><i class="fa fa-ban"></i>onCancel</div>
+                                    <div class="collapsible-body">
+                                        <ul class="collapsible">
+                                            <li>
+                                                <div class="collapsible-header green-text"><i class="fa fa-ban"></i>onCancelStart</div>
+                                                <div class="collapsible-body">
+                                                    <div class="input-field">
+                                                        <textarea id="frmCancelStart" class="materialize-textarea"></textarea>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="collapsible-header red-text"><i class="fa fa-ban"></i>onCancelEnd</div>
+                                                <div class="collapsible-body">
+                                                    <div class="input-field">
+                                                        <textarea id="frmCancelEnd" class="materialize-textarea"></textarea>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="collapsible-header"><i class="fa fa-window-close-o"></i>onClose</div>
+                                    <div class="collapsible-body">
+                                        <ul class="collapsible">
+                                            <li>
+                                                <div class="collapsible-header green-text"><i class="fa fa-window-close-o"></i>onCloseStart</div>
+                                                <div class="collapsible-body">
+                                                    <div class="input-field">
+                                                        <textarea id="frmCloseStart" class="materialize-textarea"></textarea>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="collapsible-header red-text"><i class="fa fa-window-close-o"></i>onCloseEnd</div>
+                                                <div class="collapsible-body">
+                                                    <div class="input-field">
+                                                        <textarea id="frmCloseEnd" class="materialize-textarea"></textarea>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="collapsible" id="projectTab">
+                    <li class="active">
+                        <div class="collapsible-header"><i class="fa fa-cog"></i>General</div>
+                        <div class="collapsible-body">
+                            <div class="input-field">
+                                <input id="projName" type="text" value="Project name">
+                                <label for="projName">Name</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="projDesc" type="text" value="Project description">
+                                <label for="projDesc">Description</label>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="fa fa-cogs"></i>Advanced</div>
+                        <div class="collapsible-body">
+                            <div class="input-field">
+                                <textarea id="projGlobal" class="materialize-textarea"></textarea>
+                                <label for="projGlobal">Global Variables</label>
+                            </div>
+                            <div class="input-field">
+                                <textarea id="projNotes" class="materialize-textarea"></textarea>
+                                <label for="projNotes">Project Notes</label>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="fa fa-flash"></i>Events</div>
+                        <div class="collapsible-body">
+                            <ul class="collapsible">
+                                <li>
+                                    <div class="collapsible-header"><i class="fa fa-sun-o"></i>onInit</div>
+                                    <div class="collapsible-body">
+                                        <ul class="collapsible">
+
+                                            <li>
+                                                <div class="collapsible-header green-text"><i class="fa fa-sun-o"></i>onInitStart</div>
+                                                <div class="collapsible-body">
+                                                    <div class="input-field">
+                                                        <textarea id="projInitStart" class="materialize-textarea"></textarea>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="collapsible-header red-text"><i class="fa fa-sun-o"></i>onInitEnd</div>
+                                                <div class="collapsible-body">
+                                                    <div class="input-field">
+                                                        <textarea id="projInitEnd" class="materialize-textarea"></textarea>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+
+
+
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="collapsible-header"><i class="fa fa-window-close-o"></i>onFinish</div>
+                                    <div class="collapsible-body">
+                                        <ul class="collapsible">
+
+                                            <li>
+                                                <div class="collapsible-header green-text"><i class="fa fa-window-close-o"></i>onFinishStart</div>
+                                                <div class="collapsible-body">
+                                                    <div class="input-field">
+                                                        <textarea id="projFinishStart" class="materialize-textarea"></textarea>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="collapsible-header red-text"><i class="fa fa-window-close-o"></i>onFinishEnd</div>
+                                                <div class="collapsible-body">
+                                                    <div class="input-field">
+                                                        <textarea id="projFinishEnd" class="materialize-textarea"></textarea>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </article>
+    <div id="modGen" class="modal">
+        <div class="modal-content">
+            <div class="row">
+                <div class="col s12">
+                  <ul id="codeTabs" class="tabs blue darken-4">
+                    <li class="tab col s3"><a href="#HTML5" class="active white-text">HTML5</a></li>
+                    <li class="tab col s3"><a href="#CSS3" class="white-text">CSS3</a></li>
+                    <li class="tab col s3"><a href="#js" class="white-text">Javascript</a></li>
+                    <li class="tab col s3"><a href="#Node" class="white-text">Node.js</a></li>
+                  </ul>
+                </div>
+                <div id="HTML5" class="col s12">
+                    <a class="waves-effect waves-light btn" title="Copy to clipboard" href="javascript:copyClip('codHTML5')"><i class="fa fa-copy"></i></a>
+                    <textarea id="codHTML5" class="codeWin"></textarea>
+                </div>
+                <div id="CSS3" class="col s12">
+                    <a class="waves-effect waves-light btn" title="Copy to clipboard" href="javascript:copyClip('codCSS3')"><i class="fa fa-copy"></i></a>
+                    <textarea id="codCSS3" class="codeWin"></textarea>
+                </div>
+                <div id="js" class="col s12">
+                    <a class="waves-effect waves-light btn" title="Copy to clipboard" href="javascript:copyClip('codjs')"><i class="fa fa-copy"></i></a>
+                    <textarea id="codjs" class="codeWin"></textarea>
+                </div>
+                <div id="Node" class="col s12">
+                    <a class="waves-effect waves-light btn" title="Copy to clipboard" href="javascript:copyClip('codNode')"><i class="fa fa-copy"></i></a>
+                    <textarea id="codNode" class="codeWin"></textarea>
+                </div>
+              </div>        
+            </div>
+        <!-- <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat">OK</a>
+        </div> -->
+      </div>
+    <script type="text/javascript" src="js/555.js"></script>
+    <input type="file" id="File" accept="application/JSON" style="display:none" />
+</body>
+
+</html>
