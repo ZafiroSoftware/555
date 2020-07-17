@@ -1,7 +1,7 @@
 # 555
 CRUD Code Generator. Paint the capture window and 555 generates your code
 
-This is the initial code to paint your <b>CRUD</b> screens and 555 generate all the code. At this time only paints and save/load the definition in a json file. All the properties are self explanatories.
+This is the initial code to paint your <b>CRUD</b> screens and 555 generate all the code. At this time only paints and save/load the definition in a json file. All the properties are self explanatories. Yes, the UI is very bad, but later I will improve it. Now the UI is totally Material Design based in Materialize.
 
 Please send me any comment.
 
